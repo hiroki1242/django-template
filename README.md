@@ -7,17 +7,17 @@ docker build -t <image_name> .
 
 1. **プロジェクトを作成する**  
 ```
-docker run -v $(pwd):/app <image_name> django-admin startproject <project_name> .
+docker run --rm -v $(pwd):/app <image_name> django-admin startproject <project_name> .
 ```
 
 1. **アプリ（機能）を作成する**  
 ```
-docker run -v $(pwd):/app <image_name> python manage.py startapp <app_name>
+docker run --rm -v $(pwd):/app <image_name> python manage.py startapp <app_name>
 ```
 
 1. **アプリを起動する**  
 ```
-docker run -v $(pwd):/app -p 8000:8000 <image_name>
+docker run --rm -v $(pwd):/app -p 8000:8000 <image_name>
 ```
 
 ### 備考
